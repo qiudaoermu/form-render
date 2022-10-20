@@ -129,10 +129,27 @@
       @confirm="generate"
     />
     <input id="copyNode" type="hidden">
+    <el-dialog
+      title="代码预览"
+      :visible.sync="dialogVisibleEditor"
+      width="65%"
+      :before-close="handleClose"
+    >
+      <m-ace-editor v-model="content" line-height="1.5" font-size="13" height="350px" mode="markdown" theme="chrome" />
+      <span slot="footer" class="dialog-footer">
+        <el-button type="primary" @click="handleCopy">复制</el-button>
+        <el-button @click="dialogVisibleEditor = false">取 消</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
 <script>
+import 'brace'
+import 'brace/mode/markdown'
+import 'brace/mode/javascript'
+import 'brace/theme/clouds_midnight'
+
 import draggable from 'vuedraggable'
 import { debounce } from 'throttle-debounce'
 import { saveAs } from 'file-saver'
@@ -199,6 +216,7 @@ export default {
       logo,
       idGlobal,
       formConf,
+      content: '',
       inputComponents,
       selectComponents,
       layoutComponents,
@@ -210,6 +228,7 @@ export default {
       formData: {},
       dialogVisible: false,
       jsonDrawerVisible: false,
+      dialogVisibleEditor: false,
       generateConf: null,
       showFileName: false,
       activeData: drawingDefalut[0],
@@ -403,7 +422,13 @@ export default {
       const blob = new Blob([codeStr], { type: 'text/plain;charset=utf-8' })
       saveAs(blob, data.fileName)
     },
+    // 拷贝--------------------------------
     execCopy(data) {
+      const codeStr = this.generateCode()
+      this.content = codeStr
+      this.dialogVisibleEditor = true
+    },
+    handleCopy() {
       document.getElementById('copyNode').click()
     },
     empty() {

@@ -5,7 +5,9 @@ import '@/styles/index.scss'
 import '@/icons'
 import axios from 'axios'
 import Tinymce from '@/components/tinymce/index.vue'
+import MAceEditor from 'vue-m-ace-editor'
 
+Vue.use(MAceEditor) // 注册 m-ace-editor 组件
 Vue.component('tinymce', Tinymce)
 
 Vue.config.productionTip = false

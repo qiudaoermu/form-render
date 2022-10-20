@@ -19,6 +19,7 @@
     "file-saver": "^2.0.2",
     "throttle-debounce": "^2.1.0",
     "vue": "^2.6.11",
+    "vue-m-ace-editor": "^1.0.0",
     "vuedraggable": "^2.23.2"
   },
   "devDependencies": {
