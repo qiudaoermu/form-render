@@ -530,30 +530,8 @@ export const selectComponents = [
     'auto-upload': true,
     'list-type': 'text',
     multiple: false
-  },
-  {
-    __config__: {
-      label: 'Transfer 穿梭框',
-      tag: 'el-transfer',
-      tagIcon: 'date',
-      defaultValue: null,
-      showLabel: true,
-      labelWidth: null,
-      span: 24,
-      layout: 'colFormItem',
-      required: true,
-      regList: [],
-      changeTag: true,
-      document: 'https://element.eleme.cn/#/zh-CN/component/date-picker'
-    },
-    placeholder: '请选择',
-    type: 'date',
-    style: { width: '100%' },
-    disabled: false,
-    data: [{ key: 1, label: '备选项 1', disabled: true }],
-    clearable: true,
-    readonly: false
   }
+
 ]
 
 // 布局型组件 【左面板】
@@ -600,7 +578,7 @@ export const layoutComponents = [
       showLabel: true,
       changeTag: true,
       labelWidth: null,
-      tagIcon: 'button',
+      tagIcon: 'link',
       tag: 'el-link',
       span: 24,
       layout: 'colFormItem',
@@ -617,4 +595,5 @@ export const layoutComponents = [
     circle: false,
     disabled: false
   }
+
 ]
