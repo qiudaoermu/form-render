@@ -42,14 +42,14 @@
     <div class="center-board">
       <div class="action-bar">
         <el-button icon="el-icon-video-play" type="text" @click="run">
-          运行
+          在线运行
         </el-button>
         <el-button icon="el-icon-view" type="text" @click="showJson">
-          查看json
+          查看配置
         </el-button>
-        <el-button icon="el-icon-download" type="text" @click="download">
+        <!-- <el-button icon="el-icon-download" type="text" @click="download">
           导出vue文件
-        </el-button>
+        </el-button> -->
         <el-button
           class="copy-btn-main"
           icon="el-icon-document-copy"
@@ -137,7 +137,8 @@
     >
       <m-ace-editor v-model="content" line-height="1.5" font-size="13" height="350px" mode="markdown" theme="chrome" />
       <span slot="footer" class="dialog-footer">
-        <el-button type="primary" @click="handleCopy">复制</el-button>
+        <el-button type="primary" icon="el-icon-download" @click="handleDownload">下载文件</el-button>
+        <el-button type="primary" icon="el-icon-document-copy" @click="handleCopy">复制</el-button>
         <el-button @click="dialogVisibleEditor = false">取 消</el-button>
       </span>
     </el-dialog>
@@ -422,11 +423,19 @@ export default {
       const blob = new Blob([codeStr], { type: 'text/plain;charset=utf-8' })
       saveAs(blob, data.fileName)
     },
-    // 拷贝--------------------------------
+    // 拷贝 -----------------------------------------------
     execCopy(data) {
       const codeStr = this.generateCode()
       this.content = codeStr
       this.dialogVisibleEditor = true
+    },
+    // 下载 ------------------------------------------------
+    handleDownload() {
+      const data = this.generateConf
+      data.fileName = `${+new Date()}.vue`
+      const codeStr = this.generateCode()
+      const blob = new Blob([codeStr], { type: 'text/plain;charset=utf-8' })
+      saveAs(blob, data.fileName)
     },
     handleCopy() {
       document.getElementById('copyNode').click()
