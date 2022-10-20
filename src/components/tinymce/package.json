@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JakHuang/form-generator.git"
+    "url": "git+https://github.com/JakHuang/form-render.git"
   },
   "keywords": [
     "tinymce-vue"
@@ -22,7 +22,7 @@
   "author": "jakHuang",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/JakHuang/form-generator/issues"
+    "url": "https://github.com/JakHuang/form-render/issues"
   },
-  "homepage": "https://github.com/JakHuang/form-generator/blob/dev/src/components/tinymce"
+  "homepage": "https://github.com/JakHuang/form-render/blob/dev/src/components/tinymce"
 }

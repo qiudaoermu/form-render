@@ -19,7 +19,7 @@ function resolve(dir) {
 }
 
 module.exports = {
-  publicPath: process.env.NODE_ENV === "production" ? "/form-generator/" : "/",
+  publicPath: process.env.NODE_ENV === "production" ? "/form-render/" : "/",
   pages: {
     index: {
       entry: "src/views/index/main.js",

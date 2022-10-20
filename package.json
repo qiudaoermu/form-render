@@ -1,5 +1,5 @@
 {
-  "name": "form-generator",
+  "name": "form-render",
   "version": "0.2.0",
   "private": true,
   "scripts": {
@@ -35,5 +35,5 @@
     "svg-sprite-loader": "^4.1.6",
     "vue-template-compiler": "^2.6.11"
   },
-  "homepage": "https://jakhuang.github.io/form-generator"
+  "homepage": "https://jakhuang.github.io/form-render"
 }

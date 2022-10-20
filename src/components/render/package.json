@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JakHuang/form-generator.git"
+    "url": "git+https://github.com/JakHuang/form-render.git"
   },
   "author": "jakhuang",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/JakHuang/form-generator/issues"
+    "url": "https://github.com/JakHuang/form-render/issues"
   },
-  "homepage": "https://github.com/JakHuang/form-generator#readme"
+  "homepage": "https://github.com/JakHuang/form-render#readme"
 }
